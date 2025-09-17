@@ -1,4 +1,4 @@
-package com.example.login_sigup_page
+package com.varification.app
 
 import io.flutter.embedding.android.FlutterActivity
 

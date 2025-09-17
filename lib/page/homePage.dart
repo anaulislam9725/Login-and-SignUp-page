@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:login_sigup_page/page/loginPage.dart';
 import 'package:login_sigup_page/utils/colors.dart';
+import 'package:login_sigup_page/widgets/cuatomTile.dart';
 
 class HomePage extends StatelessWidget {
   static final String path = "/HomePage";
@@ -57,12 +58,12 @@ class HomePage extends StatelessWidget {
                       ),
                       child: CircleAvatar(
                         radius: 38,
-                        backgroundImage: AssetImage("assets/fb.png"),
+                        backgroundImage: AssetImage("assets/drawer.png.webp"),
                       ),
                     ),
                     SizedBox(height: 12),
                     Text(
-                      "Rofik ahmed",
+                      "John Michael",
                       style: TextStyle(
                         fontFamily: "Raleway",
 
@@ -75,7 +76,7 @@ class HomePage extends StatelessWidget {
                     Row(
                       children: [
                         Text(
-                          "rofikahmed4923@gmail.com",
+                          "johnmichael4923@gmail.com",
                           style: TextStyle(
                             fontFamily: "Raleway",
                             fontSize: 16,
@@ -102,156 +103,32 @@ class HomePage extends StatelessWidget {
                   height: 54,
                   width: double.infinity,
                   color: Colors.grey.withValues(alpha: 0.2),
-                  child: _inbox(),
+                  child: AppTile(icon: Icons.email, text: "Inbox"),
                 ),
-
-                _outbox(),
-                _favorit(),
-                _trash(),
-                _archieve(),
-                _logout(),
+                AppTile(icon: Icons.send, text: "Outbox"),
+                AppTile(icon: Icons.favorite, text: "Favorite"),
+                AppTile(icon: Icons.archive, text: "Archive"),
+                AppTile(icon: Icons.delete, text: "Trash"),
+                AppTile(icon: Icons.info, text: "Spam"),
                 Container(
                   height: 1,
                   width: double.infinity,
                   color: Colors.grey.withValues(alpha: 0.2),
                 ),
-                _profile(),
-                _settings(),
-                _spam(context),
+                AppTile(icon: Icons.person, text: "Profile"),
+                AppTile(icon: Icons.settings, text: "Settings"),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, LoginPage.path);
+                  },
+                  child: AppTile(
+                    icon: Icons.exit_to_app_rounded,
+                    text: "Logout",
+                  ),
+                ),
               ],
             ),
           ],
-        ),
-      ),
-    );
-  }
-
-  _inbox() {
-    return ListTile(
-      leading: Icon(Icons.email, color: Colors.white, size: 26),
-
-      title: Padding(
-        padding: const EdgeInsets.only(left: 10),
-        child: Text(
-          "Inbox",
-          style: TextStyle(color: Colors.white, fontSize: 18),
-        ),
-      ),
-    );
-  }
-
-  _outbox() {
-    return ListTile(
-      leading: Icon(Icons.send, color: Colors.white, size: 26),
-
-      title: Padding(
-        padding: const EdgeInsets.only(left: 10),
-        child: Text(
-          "OutBox",
-          style: TextStyle(color: Colors.white, fontSize: 18),
-        ),
-      ),
-    );
-  }
-
-  _favorit() {
-    return ListTile(
-      leading: Icon(Icons.favorite, color: Colors.white, size: 26),
-
-      title: Padding(
-        padding: const EdgeInsets.only(left: 10),
-        child: Text(
-          "Favorite",
-          style: TextStyle(color: Colors.white, fontSize: 18),
-        ),
-      ),
-    );
-  }
-
-  _archieve() {
-    return ListTile(
-      leading: Icon(Icons.archive, color: Colors.white, size: 26),
-
-      title: Padding(
-        padding: const EdgeInsets.only(left: 10),
-        child: Text(
-          "Archieve",
-          style: TextStyle(color: Colors.white, fontSize: 18),
-        ),
-      ),
-    );
-  }
-
-  _trash() {
-    return ListTile(
-      leading: Icon(Icons.delete, color: Colors.white, size: 26),
-
-      title: Padding(
-        padding: const EdgeInsets.only(left: 10),
-        child: Text(
-          "Trash",
-          style: TextStyle(color: Colors.white, fontSize: 18),
-        ),
-      ),
-    );
-  }
-
-  _spam(context) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.pushNamed(context, LoginPage.path);
-      },
-      child: ListTile(
-        leading: Icon(Icons.exit_to_app_rounded, color: Colors.white, size: 26),
-
-        title: Padding(
-          padding: const EdgeInsets.only(left: 10),
-          child: Text(
-            "Logout",
-            style: TextStyle(color: Colors.white, fontSize: 18),
-          ),
-        ),
-      ),
-    );
-  }
-
-  _profile() {
-    return ListTile(
-      leading: Icon(Icons.person, color: Colors.white, size: 26),
-
-      title: Padding(
-        padding: const EdgeInsets.only(left: 10),
-        child: Text(
-          "Profile",
-          style: TextStyle(color: Colors.white, fontSize: 18),
-        ),
-      ),
-    );
-  }
-
-  _settings() {
-    return ListTile(
-      leading: Icon(Icons.settings, color: Colors.white, size: 26),
-
-      title: Padding(
-        padding: const EdgeInsets.only(left: 10),
-        child: Text(
-          "Settings",
-          style: TextStyle(color: Colors.white, fontSize: 18),
-        ),
-      ),
-    );
-  }
-
-  _logout() {
-    return ListTile(
-      leading: Icon(Icons.info, color: Colors.white, size: 26),
-
-      title: Padding(
-        padding: const EdgeInsets.only(left: 10),
-        child: Text(
-          "Spam",
-          style: TextStyle(color: Colors.white, fontSize: 18),
         ),
       ),
     );
