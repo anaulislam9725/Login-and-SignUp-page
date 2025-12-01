@@ -17,8 +17,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Verification',
-
+      title: 'Demo',
+    
       initialRoute: SplaseScreen.path,
       routes: {
         SplaseScreen.path: (context) => SplaseScreen(),

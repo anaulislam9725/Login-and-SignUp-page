@@ -36,42 +36,41 @@ class MyTextFild extends StatelessWidget {
           ),
         ],
       ),
-      child: TextFormField(
-        obscureText: obscureText ?? false,
-        validator: validator,
-        controller: controller,
-        decoration: InputDecoration(
-          contentPadding: EdgeInsets.only(
-            top: 18,
-            bottom: 18,
-            right: 18,
-            left: 18,
+      child: SizedBox(
+        height: 50,
+        width: double.infinity,
+        child: TextFormField(
+          obscureText: obscureText ?? false,
+          validator: validator,
+          controller: controller,
+          decoration: InputDecoration(
+          
+            prefixIcon: prefixIcon,
+            hintText: hintText,
+            hintStyle: TextStyle(
+              color: AppColors.bottonColor.withValues(alpha: 0.8),
+            ),
+            suffixIcon: suffixicons,
+            focusedErrorBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(30),
+              borderSide: BorderSide(color: Colors.red),
+            ),
+            errorStyle: TextStyle(color: Colors.red),
+            errorBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(30),
+              borderSide: BorderSide(color: Colors.red),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(30),
+              borderSide: BorderSide(color: Colors.white),
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(30),
+              borderSide: BorderSide(color: Colors.white),
+            ),
+            fillColor: fillColor,
+            filled: true,
           ),
-          prefixIcon: prefixIcon,
-          hintText: hintText,
-          hintStyle: TextStyle(
-            color: AppColors.bottonColor.withValues(alpha: 0.8),
-          ),
-          suffixIcon: suffixicons,
-          focusedErrorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(30),
-            borderSide: BorderSide(color: Colors.red),
-          ),
-          errorStyle: TextStyle(color: Colors.red),
-          errorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(30),
-            borderSide: BorderSide(color: Colors.red),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(30),
-            borderSide: BorderSide(color: Colors.white),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(30),
-            borderSide: BorderSide(color: Colors.white),
-          ),
-          fillColor: fillColor,
-          filled: true,
         ),
       ),
     );
